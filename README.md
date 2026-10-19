@@ -31,7 +31,7 @@ An Express.js and TypeScript REST API using Prisma ORM and MongoDB.
    pnpm dev
    ```
 
-The server starts at `http://localhost:3000` by default. Run `pnpm build` and then `pnpm start` for a production build.
+The server starts at `http://localhost:5000` by default. Run `pnpm build` and then `pnpm start` for a production build.
 
 ## User model
 
@@ -77,4 +77,4 @@ Successful responses use a JSON envelope with `success`, `message`, and `data`. 
 
 ## Postman
 
-Import `postman/User CRUD API.postman_collection.json` into Postman. Set `baseUrl` to `http://localhost:5000`; run the create request first to store `userId`, then run the get, update, and delete requests. Use the collection to exercise all five endpoints and capture the screenshots required for submission.
+Import `postman/User CRUD API.postman_collection.json` into Postman. Set `baseUrl` to `http://localhost:5000/api/v1`; run the create request first to store `userId`, then run the get, update, and delete requests. Use the collection to exercise all five endpoints and capture the screenshots required for submission.

@@ -1,19 +1,11 @@
 {
   "info": {
+    "_postman_id": "c493aad7-1e17-4e6a-a5b3-110375e08192",
     "name": "User CRUD API",
     "description": "Exercises all five User CRUD REST API endpoints.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49700440"
   },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:5000/api/v1"
-    },
-    {
-      "key": "userId",
-      "value": ""
-    }
-  ],
   "item": [
     {
       "name": "Create user",
@@ -23,12 +15,7 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "pm.test('User created', function () {",
-              "    pm.response.to.have.status(201);",
-              "    const user = pm.response.json().data;",
-              "    pm.expect(user).to.have.property('id');",
-              "    pm.collectionVariables.set('userId', user.id);",
-              "});"
+              "pm.test('User created', function () {\n    pm.response.to.have.status(201);\n    const user = pm.response.json().data;\n    pm.expect(user).to.have.property('id');\n    pm.collectionVariables.set('userId', user.id);\n});"
             ]
           }
         }
@@ -51,12 +38,11 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/api/users",
+          "raw": "{{baseUrl}}/users",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "api",
             "users"
           ]
         }
@@ -67,13 +53,13 @@
       "name": "Get all users",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
-          "raw": "{{baseUrl}}/api/users",
+          "raw": "{{baseUrl}}/users",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "api",
             "users"
           ]
         }
@@ -84,15 +70,21 @@
       "name": "Get user by ID",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
-          "raw": "{{baseUrl}}/api/users/{{userId}}",
+          "raw": "{{baseUrl}}/users/:id",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "api",
             "users",
-            "{{userId}}"
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6ad66a269560aef23e234053"
+            }
           ]
         }
       },
@@ -118,14 +110,19 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/api/users/{{userId}}",
+          "raw": "{{baseUrl}}/users/:id",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "api",
             "users",
-            "{{userId}}"
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6ad66a269560aef23e234053"
+            }
           ]
         }
       },
@@ -135,19 +132,35 @@
       "name": "Delete user",
       "request": {
         "method": "DELETE",
+        "header": [],
         "url": {
-          "raw": "{{baseUrl}}/api/users/{{userId}}",
+          "raw": "{{baseUrl}}/users/:id",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
-            "api",
             "users",
-            "{{userId}}"
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6ad66a309560aef23e234054"
+            }
           ]
         }
       },
       "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api/v1"
+    },
+    {
+      "key": "userId",
+      "value": ""
     }
   ]
 }

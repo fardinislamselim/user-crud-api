@@ -6,7 +6,7 @@ const router:Router = Router()
 
 const moduleRoutes = [
     {
-        path:"/user",
+        path:"/users",
         route:userRouter
     }
 ]
